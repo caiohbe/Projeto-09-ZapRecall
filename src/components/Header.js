@@ -21,6 +21,7 @@ const Logo = styled.div`
     align-items: center;
     font-family: 'Righteous', cursive;
     margin-top: 50px;
+    margin-bottom: 50px;
     
     img {
         margin-right: 18px;
