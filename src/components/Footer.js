@@ -12,7 +12,7 @@ const Bottom = styled.div`
     position: fixed;
     bottom: 0; 
     width: 100vw;
-    height: 110px;
+    height: 100px;
     background-color: #FFFFFF;
     box-shadow: 0px -4px 6px 0px #0000000D;
     display: flex;
