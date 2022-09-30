@@ -7,7 +7,6 @@ import React from "react";
 
 
 export default function App() {
-    const [cardsQtt, setCardsQtt] = React.useState(deck1.length)
     const [done, setDone] = React.useState([])
     const [gotIncorrect, setGotIncorrect] = React.useState([])
     const [gotAlmost, setGotAlmost] = React.useState([])

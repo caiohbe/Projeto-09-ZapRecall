@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import turn from "../assets/img/setinha.png"
-import playIcon from "../assets/img/play-outline-icon.svg"
-import incorrectIcon from "../assets/img/close-circle-icon.svg"
-import almostIcon from "../assets/img/help-circle-icon.svg"
-import correctIcon from "../assets/img/checkmark-circle-icon.svg"
+import turn from "../assets/img/seta_virar.png"
+import playIcon from "../assets/img/seta_play.png"
+import incorrectIcon from "../assets/img/icone_erro.png"
+import almostIcon from "../assets/img/icone_quase.png"
+import correctIcon from "../assets/img/icone_certo.png"
 
 export default function FlashCards(props) {
     const [hideUnflipped, setHideUnflipped] = React.useState(false)
@@ -71,6 +71,10 @@ export default function FlashCards(props) {
         setDone([...done, index, 'correct'])
     }
 
+    // function unflip() {
+    //     setHideAnswer(!hideAnswer)
+    //     setHideUnflipped(!hideUnflipped)
+    // }
 }
 
 function selectColor(index, gotIncorrect, gotAlmost, gotCorrect) {
@@ -101,7 +105,7 @@ const Unflipped = styled.div`
     font-weight: 700;
 
     img {
-        height: 30px;
+        height: 22px;
         color: #333333;
     }
 `
