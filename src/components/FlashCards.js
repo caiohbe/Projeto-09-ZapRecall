@@ -15,18 +15,18 @@ export default function FlashCards(props) {
 
     return (
         <>
-            <Unflipped gotIncorrect={props.gotIncorrect} gotAlmost={props.gotAlmost} gotCorrect={props.gotCorrect} index={props.index} done={props.done} onClick={() => flip(props.done, props.index)} hide={hideUnflipped}>Pergunta {props.index + 1} <img src={icon} alt="icon"/></Unflipped>
-            <Question onClick={seeAnswer} hide={hideQuestion}>{props.question} <img src={turn} alt="turn"/></Question>
-            <Answer hide={hideAnswer}>
+            <Unflipped data-identifier="flashcard flashcard-show-btn"  gotIncorrect={props.gotIncorrect} gotAlmost={props.gotAlmost} gotCorrect={props.gotCorrect} index={props.index} done={props.done} onClick={() => flip(props.done, props.index)} hide={hideUnflipped}>Pergunta {props.index + 1} <img data-identifier="flashcard-status" src={icon} alt="icon"/></Unflipped>
+            <Question data-identifier="flashcard-question" onClick={seeAnswer} hide={hideQuestion}>{props.question} <img data-identifier="flashcard-turn-btn" src={turn} alt="turn"/></Question>
+            <Answer data-identifier="flashcard-answer" hide={hideAnswer}>
                 <span>{props.answer}</span>
                 <Buttons>
-                    <Button onClick={() => getIncorrect(props.index, props.setGotIncorrect, props.gotIncorrect, props.setDone, props.done)}>
+                    <Button data-identifier="forgot-btn" onClick={() => getIncorrect(props.index, props.setGotIncorrect, props.gotIncorrect, props.setDone, props.done)}>
                         Não<br/>Lembrei
                     </Button>
-                    <Button onClick={() => getAlmost(props.index, props.setGotAlmost, props.gotAlmost, props.setDone, props.done)}>
+                    <Button data-identifier="almost-forgot-btn" onClick={() => getAlmost(props.index, props.setGotAlmost, props.gotAlmost, props.setDone, props.done)}>
                         Quase Não Lembrei
                     </Button>
-                    <Button onClick={() => getCorrect(props.index, props.setGotCorrect, props.gotCorrect, props.setDone, props.done)}>
+                    <Button data-identifier="zap-btn" onClick={() => getCorrect(props.index, props.setGotCorrect, props.gotCorrect, props.setDone, props.done)}>
                         Zap!
                     </Button>
                 </Buttons>
@@ -70,11 +70,6 @@ export default function FlashCards(props) {
         setIcon(correctIcon)
         setDone([...done, index, 'correct'])
     }
-
-    // function unflip() {
-    //     setHideAnswer(!hideAnswer)
-    //     setHideUnflipped(!hideUnflipped)
-    // }
 }
 
 function selectColor(index, gotIncorrect, gotAlmost, gotCorrect) {

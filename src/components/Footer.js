@@ -8,7 +8,7 @@ export default function Footer(props) {
     let arr = ['','','','','','','','']
     return (
         <Bottom>
-            <h3>{props.done.length/2}/8 CONCLUÍDO</h3>
+            <h3 data-identifier="flashcard-counter">{props.done.length/2}/8 CONCLUÍDO</h3>
             <div>
                 <Icon done={props.done}/>
             </div>
